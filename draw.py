@@ -51,4 +51,10 @@ blank[:]=0,0,0 # reset to black
 cv.line(blank, (100,50), (blank.shape[1]//2,blank.shape[0]//2), (255,255,255))
 cv.imshow('Line', blank)
 
+# write text
+blank[:]=0,0,0 # reset to black
+# np, text, top left, font, scale, color, thickness
+cv.putText(blank, 'Hello', (255,255), cv.FONT_HERSHEY_TRIPLEX, 1.0, (0,255,0), thickness=2)
+cv.imshow('Text', blank)
+
 cv.waitKey(0)
