@@ -21,6 +21,10 @@ cv.imshow('Canny Edges', canny)
 # hierarchies = if one shape is inside another
 contours, hierarchies = cv.findContours(canny, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
 print(f'{len(contours)} contours(s) found CHAIN_APPROX_SIMPLE')
+blank = np.zeros(img.shape, dtype='uint8')
+# np, contours, how many (-1 means all), color, thickness
+cv.drawContours(blank, contours, -1, (0,0,255), 1)
+cv.imshow('Contours Canny', blank)
 contours, hierarchies = cv.findContours(canny, cv.RETR_LIST, cv.CHAIN_APPROX_NONE)
 print(f'{len(contours)} contours(s) found CHAIN_APPROX_NONE')
 
@@ -31,7 +35,10 @@ canny = cv.Canny(blur, 125, 175)
 cv.imshow('Canny Edges Blur', canny)
 contours, hierarchies = cv.findContours(canny, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
 print(f'{len(contours)} contours(s) found blur CHAIN_APPROX_SIMPLE')
-
+blank = np.zeros(img.shape, dtype='uint8')
+# np, contours, how many (-1 means all), color, thickness
+cv.drawContours(blank, contours, -1, (0,0,255), 1)
+cv.imshow('Contours Canny Blur', blank)
 
 # cv.THRESH_BINARY = below 125 it is set to 0, above it is set to 255
 ret, thresh = cv.threshold(gray, 125, 255, cv.THRESH_BINARY)
@@ -42,7 +49,11 @@ print(f'{len(contours)} contours(s) found thresh CHAIN_APPROX_SIMPLE')
 
 blank = np.zeros(img.shape, dtype='uint8')
 # np, contours, how many (-1 means all), color, thickness
-cv.drawContours(blank, contours, -1, (0,0,255), 2)
-cv.imshow('Contours', blank)
+cv.drawContours(blank, contours, -1, (0,0,255), 1)
+cv.imshow('Contours Threshold', blank)
+
+# get contours from Canny is preferable over Threshold
+# because Threshold is "brute force"
+# and because contours algorithm is (the same) as canny
 
 cv.waitKey(0)
