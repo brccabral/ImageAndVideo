@@ -1,5 +1,6 @@
 import cv2 as cv
 import numpy as np
+import matplotlib.pyplot as plt
 
 img: np.ndarray = cv.imread('Resources/Photos/park.jpg')
 cv.imshow('Park', img)
@@ -17,3 +18,7 @@ lab = cv.cvtColor(img, cv.COLOR_BGR2LAB)
 cv.imshow('LAB', lab)
 
 cv.waitKey(0)
+
+# other libraries use RGB (inverted)
+plt.imshow(img)
+plt.show()
