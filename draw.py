@@ -45,4 +45,10 @@ cv.imshow('Circle', blank)
 cv.circle(blank, (blank.shape[1]//2,blank.shape[0]//2), 40, (0,0,255), thickness=cv.FILLED)
 cv.imshow('Circle filled', blank)
 
+# draw line
+blank[:]=0,0,0 # reset to black
+# np, start, end, color, thickness
+cv.line(blank, (100,50), (blank.shape[1]//2,blank.shape[0]//2), (255,255,255))
+cv.imshow('Line', blank)
+
 cv.waitKey(0)
