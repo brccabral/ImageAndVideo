@@ -23,4 +23,17 @@ cv.imshow('Red', blank)
 blank[200:300, 300:400] = 255,0,0
 cv.imshow('Blue square on Red', blank) # previous blank is Red
 
+# draw rectangle
+blank[:]=0,0,0 # reset to black
+# np, start, end, color, thickness
+cv.rectangle(blank, (0,0), (250,400), (0,255,0), thickness=2)
+cv.imshow('Rectangle', blank)
+
+cv.rectangle(blank, (0,0), (250,400), (0,255,0), thickness=cv.FILLED)
+cv.imshow('Rectangle filled', blank)
+
+blank[:]=0,0,0 # reset to black
+cv.rectangle(blank, (0,0), (blank.shape[1]//2,blank.shape[0]//2), (0,255,0), thickness=cv.FILLED)
+cv.imshow('Square', blank)
+
 cv.waitKey(0)
