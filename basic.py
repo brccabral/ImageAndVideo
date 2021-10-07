@@ -17,4 +17,8 @@ cv.imshow('More Blur', blur)
 canny = cv.Canny(img, 125, 175)
 cv.imshow('Canny Edges', canny)
 
+# reduce the amount of edges by passing blur images
+canny = cv.Canny(blur, 125, 175)
+cv.imshow('Less Edges', canny)
+
 cv.waitKey(0)
