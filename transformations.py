@@ -36,5 +36,13 @@ cv.imshow('Rotate', rotated)
 resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC) # better resolution if shape is different from original
 cv.imshow('Resized INTER_CUBIC', resized)
 
+# flipping
+flip = cv.flip(img, 1)
+cv.imshow('Flip horizontal', flip)
+flip = cv.flip(img, 0)
+cv.imshow('Flip vertical', flip)
+flip = cv.flip(img, -1)
+cv.imshow('Flip both horizontal vertical', flip)
+
 
 cv.waitKey(0)
