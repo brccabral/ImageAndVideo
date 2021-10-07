@@ -29,4 +29,7 @@ cv.imshow('Dilated', dilated)
 eroded = cv.erode(dilated, (3,3), iterations=3)
 cv.imshow('Eroded', eroded)
 
+eroded = cv.erode(dilated, (7,7), iterations=3) # get back almost the same as Less Edges
+cv.imshow('Eroded', eroded)
+
 cv.waitKey(0)
