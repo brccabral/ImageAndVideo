@@ -2,11 +2,17 @@ import cv2 as cv
 import numpy
 
 def rescaleFrame(frame: numpy.ndarray, scale: float=0.75):
+    # Images, Videos and Stream
     width = int(frame.shape[1] * scale)
     height = int(frame.shape[0] * scale)
     dimensions = (width, height)
 
     return cv.resize(frame, dimensions, interpolation=cv.INTER_AREA)
+
+def changeResolution(width, height):
+    # Live video
+    capture.set(3,width)
+    capture.set(4,height)
 
 img = cv.imread('Resources/Photos/cat_large.jpg')
 img_resized = rescaleFrame(img)
