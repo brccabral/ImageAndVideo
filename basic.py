@@ -39,4 +39,8 @@ cv.imshow('Resized', resized)
 resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC) # better resolution if shape is different from original
 cv.imshow('Resized INTER_CUBIC', resized)
 
+# Cropping
+cropped = img[50:200, 200:400]
+cv.imshow('Cropped', cropped)
+
 cv.waitKey(0)
