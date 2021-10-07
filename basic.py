@@ -32,4 +32,8 @@ cv.imshow('Eroded', eroded)
 eroded = cv.erode(dilated, (7,7), iterations=3) # get back almost the same as Less Edges
 cv.imshow('Eroded', eroded)
 
+# resize
+resized = cv.resize(img, (500,500)) # don't keep aspect ratio
+cv.imshow('Resized', resized)
+
 cv.waitKey(0)
