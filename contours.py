@@ -33,4 +33,12 @@ contours, hierarchies = cv.findContours(canny, cv.RETR_LIST, cv.CHAIN_APPROX_SIM
 print(f'{len(contours)} contours(s) found blur CHAIN_APPROX_SIMPLE')
 
 
+# cv.THRESH_BINARY = below 125 it is set to 0, above it is set to 255
+ret, thresh = cv.threshold(gray, 125, 255, cv.THRESH_BINARY)
+cv.imshow('Threshold', thresh)
+
+contours, hierarchies = cv.findContours(thresh, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
+print(f'{len(contours)} contours(s) found thresh CHAIN_APPROX_SIMPLE')
+
+
 cv.waitKey(0)
