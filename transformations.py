@@ -32,4 +32,9 @@ def rotate(img: np.ndarray, angle, rotPoint=None):
 rotated = rotate(img, 45)
 cv.imshow('Rotate', rotated)
 
+# resized
+resized = cv.resize(img, (500,500), interpolation=cv.INTER_CUBIC) # better resolution if shape is different from original
+cv.imshow('Resized INTER_CUBIC', resized)
+
+
 cv.waitKey(0)
