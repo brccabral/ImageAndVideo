@@ -2,7 +2,7 @@ import cv2 as cv
 import numpy as np
 
 
-img = cv.imread('Resources/Photos/cats.jpg')
+img: np.ndarray = cv.imread('Resources/Photos/cats.jpg')
 cv.imshow('Cats', img)
 
 # convert to grayscale
@@ -40,5 +40,9 @@ cv.imshow('Threshold', thresh)
 contours, hierarchies = cv.findContours(thresh, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
 print(f'{len(contours)} contours(s) found thresh CHAIN_APPROX_SIMPLE')
 
+blank = np.zeros(img.shape, dtype='uint8')
+# np, contours, how many (-1 means all), color, thickness
+cv.drawContours(blank, contours, -1, (0,0,255), 2)
+cv.imshow('Contours', blank)
 
 cv.waitKey(0)
