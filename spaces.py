@@ -21,6 +21,10 @@ cv.imshow('LAB', lab)
 rgb = cv.cvtColor(img, cv.COLOR_BGR2RGB)
 cv.imshow('RGB', rgb)
 
+# HSV to BGR
+hsv_bgr = cv.cvtColor(hsv, cv.COLOR_HSV2BGR)
+cv.imshow('HSV to BGR', hsv_bgr)
+
 cv.waitKey(0)
 
 # other libraries use RGB (inverted)
