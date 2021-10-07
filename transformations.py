@@ -16,4 +16,20 @@ cv.imshow('Translated Rigth Down', translated)
 translated = translate(img, -100, -150)
 cv.imshow('Translated Left Up', translated)
 
+# rotation
+def rotate(img: np.ndarray, angle, rotPoint=None):
+    (height, width) = img.shape[:2]
+
+    if rotPoint is None:
+        rotPoint = (width//2,height//2)
+
+    # center, angle, scale
+    rotMatrix = cv.getRotationMatrix2D(rotPoint, angle, 1.0)
+    dimensions = (width, height)
+
+    return cv.warpAffine(img, rotMatrix, dimensions)
+
+rotated = rotate(img, 45)
+cv.imshow('Rotate', rotated)
+
 cv.waitKey(0)
