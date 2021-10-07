@@ -19,4 +19,8 @@ cv.imshow('Green', blank)
 blank[:] = 0,0,255
 cv.imshow('Red', blank)
 
+# paint a portion of the image
+blank[200:300, 300:400] = 255,0,0
+cv.imshow('Blue square on Red', blank) # previous blank is Red
+
 cv.waitKey(0)
