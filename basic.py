@@ -21,4 +21,8 @@ cv.imshow('Canny Edges', canny)
 canny = cv.Canny(blur, 125, 175)
 cv.imshow('Less Edges', canny)
 
+# dilating the image
+dilated = cv.dilate(canny, (7,7), iterations=3)
+cv.imshow('Dilated', dilated)
+
 cv.waitKey(0)
