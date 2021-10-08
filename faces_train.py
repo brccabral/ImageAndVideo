@@ -28,7 +28,7 @@ def create_train():
             faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=4)
 
             for (x,y,w,h) in faces_rect:
-                faces_roi = img_array[y:y+h, x:x+w]
+                faces_roi = gray[y:y+h, x:x+w]
                 features.append(faces_roi)
                 labels.append(label)
                 #cv.imshow(f'{person} {img}', faces_roi)
@@ -38,5 +38,17 @@ create_train()
 
 print(f'Length features {len(features)}')
 print(f'Length labels {len(labels)}')
+
+features = np.array(features, dtype=object)
+labels = np.array(labels)
+
+np.save('features.npy', features)
+np.save('labels.npy', labels)
+
+face_recognizer = cv.face.LBPHFaceRecognizer_create()
+face_recognizer.train(features, labels)
+face_recognizer.save('face_trained.yml')
+
+print('Training done ------------')
 
 # cv.waitKey(0)
