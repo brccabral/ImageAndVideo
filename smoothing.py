@@ -14,6 +14,11 @@ cv.imshow('Average Blur 3x3', average)
 average = cv.blur(img, (7,7))
 cv.imshow('Average Blur 7x7', average)
 
-
+# Gaussian Blur
+# 7x7, standard deviation 0
+# product deviation method
+# less blur than avg
+gauss = cv.GaussianBlur(img, (7,7), 0)
+cv.imshow('Gaussian Blur 7x7 std 0', gauss)
 
 cv.waitKey(0)
