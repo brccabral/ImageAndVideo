@@ -29,9 +29,14 @@ def create_train():
 
             for (x,y,w,h) in faces_rect:
                 faces_roi = img_array[y:y+h, x:x+w]
-                cv.imshow(f'{person} {img}', faces_roi)
-        break
+                features.append(faces_roi)
+                labels.append(label)
+                #cv.imshow(f'{person} {img}', faces_roi)
+        #break
 
 create_train()
 
-cv.waitKey(0)
+print(f'Length features {len(features)}')
+print(f'Length labels {len(labels)}')
+
+# cv.waitKey(0)
