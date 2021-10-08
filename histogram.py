@@ -27,7 +27,7 @@ masked = cv.bitwise_and(gray, gray, mask=circle)
 cv.imshow('Masked Circle Image', masked)
 
 # Grayscale masked histogram
-gray_hist = cv.calcHist([gray], [0], mask=masked, histSize=[256], ranges=[0,256])
+gray_hist = cv.calcHist([gray], [0], mask=circle, histSize=[256], ranges=[0,256])
 
 plt.figure()
 plt.title('Grayscale circle Histogram')
@@ -42,6 +42,19 @@ plt.figure()
 colors = ('b', 'g', 'r')
 for i, color in enumerate(colors):
     hist = cv.calcHist([img], [i], None, [256], [0,256])
+    plt.plot(hist, color=color)
+    plt.xlim([0,256])
+plt.title('Color Histogram')
+plt.xlabel('Bins')
+plt.ylabel('# of pixels')
+plt.show()
+plt.show()
+
+# Color mask histogram
+plt.figure()
+colors = ('b', 'g', 'r')
+for i, color in enumerate(colors):
+    hist = cv.calcHist([img], [i], circle, [256], [0,256])
     plt.plot(hist, color=color)
     plt.xlim([0,256])
 plt.title('Color Histogram')
