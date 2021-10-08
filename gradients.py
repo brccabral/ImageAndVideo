@@ -19,4 +19,7 @@ cv.imshow('Sobel X', sobelx)
 sobely = cv.Sobel(gray, cv.CV_64F, 0, 1)
 cv.imshow('Sobel Y', sobely)
 
+combined_sobel = cv.bitwise_or(sobelx, sobely)
+cv.imshow('Combined Sobel', combined_sobel)
+
 cv.waitKey(0)
