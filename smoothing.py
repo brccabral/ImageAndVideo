@@ -29,4 +29,10 @@ cv.imshow('Median Blur 7x7', median)
 median = cv.medianBlur(img, 3)
 cv.imshow('Median Blur 3x3', median)
 
+# Bilateral
+# keeps edges
+# np, diameter, how far away a pixel can influence in calculations
+bilateral = cv.bilateralFilter(img, 10, 35, 25)
+cv.imshow('Bilateral', bilateral)
+
 cv.waitKey(0)
