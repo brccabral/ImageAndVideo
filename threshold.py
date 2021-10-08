@@ -17,4 +17,17 @@ cv.imshow('Simple thresholding', thresh)
 threshold, thresh = cv.threshold(gray, 150, 255, cv.THRESH_BINARY_INV)
 cv.imshow('Inverse thresholding', thresh)
 
+# Adaptive thresholding
+adaptive_thresh = cv.adaptiveThreshold(gray, 255, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY, 11, 1)
+cv.imshow('Adaptive thresholding 11 1', adaptive_thresh)
+
+adaptive_thresh = cv.adaptiveThreshold(gray, 255, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY, 13, 1)
+cv.imshow('Adaptive thresholding 13 1', adaptive_thresh)
+
+adaptive_thresh = cv.adaptiveThreshold(gray, 255, cv.ADAPTIVE_THRESH_MEAN_C, cv.THRESH_BINARY, 11, 3)
+cv.imshow('Adaptive thresholding 11 3', adaptive_thresh)
+
+adaptive_thresh = cv.adaptiveThreshold(gray, 255, cv.ADAPTIVE_THRESH_GAUSSIAN_C, cv.THRESH_BINARY, 11, 1)
+cv.imshow('Adaptive thresholding ADAPTIVE_THRESH_GAUSSIAN_C 11 1', adaptive_thresh)
+
 cv.waitKey(0)
