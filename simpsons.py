@@ -45,3 +45,10 @@ plt.show()
 featureSet, labels = caer.sep_train(train, IMG_SIZE=IMG_SIZE)
 
 # %%
+from tensorflow.keras.utils import to_categorical
+# Normalize the featureSet ==> (0,1)
+featureSet = caer.normalize(featureSet)
+labels = to_categorical(labels, len(characters))
+# %%
+
+# %%
