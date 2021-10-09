@@ -7,8 +7,6 @@ import numpy as np
 import cv2 as cv
 import gc
 
-from numpy.core.records import array
-
 # %%
 IMG_SIZE = (80,80)
 channels = 1
@@ -76,5 +74,15 @@ model.summary()
 # %%
 from tensorflow.keras.callbacks import LearningRateScheduler
 callbacks_list = [LearningRateScheduler(canaro.lr_schedule)]
+
+# %%
+import scipy
+# %%
+training = model.fit(train_gen,
+                    steps_per_epoch=len(x_train)//BATCH_SIZE,
+                    epochs=EPOCHS,
+                    validation_data=(x_val, y_val),
+                    validation_steps=len(y_val)//BATCH_SIZE,
+                    callbacks=callbacks_list)
 
 # %%
