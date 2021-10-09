@@ -1,7 +1,7 @@
 # %%
 import os
+from pickle import TRUE
 import caer
-from caer.io.io import imsave
 import canaro
 import numpy as np
 import cv2 as cv
@@ -28,5 +28,8 @@ for i in char_dict:
         break
 characters
 # %%
+
+# Create training data
+train = caer.preprocess_from_dir(DIR=char_path, classes=characters, channels=channels, IMG_SIZE=IMG_SIZE, isShuffle=True, verbose=True)
 
 # %%
