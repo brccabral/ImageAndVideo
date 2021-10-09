@@ -72,3 +72,9 @@ model = canaro.models.createSimpsonsModel(IMG_SIZE=IMG_SIZE, channels=channels, 
 
 # %%
 model.summary()
+
+# %%
+from tensorflow.keras.callbacks import LearningRateScheduler
+callbacks_list = [LearningRateScheduler(canaro.lr_schedule)]
+
+# %%
