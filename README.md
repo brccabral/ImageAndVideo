@@ -5,6 +5,7 @@ opencv-contrib-python
 
 pip install caer
 
+pip install numpy scipy matplotlib ipython jupyter pandas sympy nose
  
 *canaro installs tensorflow*
 
