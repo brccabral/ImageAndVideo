@@ -64,3 +64,11 @@ EPOCHS = 10
 # Image data generator
 datagen = canaro.generators.imageDataGenerator()
 train_gen = datagen.flow(x_train, y_train, batch_size=BATCH_SIZE)
+# %%
+# Creating the model
+model = canaro.models.createSimpsonsModel(IMG_SIZE=IMG_SIZE, channels=channels, output_dim=len(characters),
+                                          loss='binary_crossentropy', decay=1e-6, learning_rate=0.001,
+                                          momentum=0.9, nesterov=True)
+
+# %%
+model.summary()
