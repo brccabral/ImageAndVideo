@@ -59,3 +59,8 @@ del labels
 gc.collect()
 
 # %%
+BATCH_SIZE = 32
+EPOCHS = 10
+# Image data generator
+datagen = canaro.generators.imageDataGenerator()
+train_gen = datagen.flow(x_train, y_train, batch_size=BATCH_SIZE)
