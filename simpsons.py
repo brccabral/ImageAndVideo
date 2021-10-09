@@ -50,5 +50,6 @@ from tensorflow.keras.utils import to_categorical
 featureSet = caer.normalize(featureSet)
 labels = to_categorical(labels, len(characters))
 # %%
-
+# 20% test
+x_train, x_val, y_train, y_val = caer.train_val_split(featureSet, labels, val_ratio=.2)
 # %%
