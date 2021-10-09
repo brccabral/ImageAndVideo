@@ -42,3 +42,6 @@ plt.figure(figsize=(30,30))
 plt.imshow(train[0][0], cmap='gray')
 plt.show()
 # %%
+featureSet, labels = caer.sep_train(train, IMG_SIZE=IMG_SIZE)
+
+# %%
