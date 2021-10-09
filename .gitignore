@@ -1,4 +1,6 @@
 venv*/
 *.tar
+*.zip
 
 Resources/simpsons_dataset/*
+Resources/kaggle_simpson_testset/*
