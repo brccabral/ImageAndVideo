@@ -1,2 +1,4 @@
 venv*/
+*.tar
 
+Resources/simpsons_dataset/*
