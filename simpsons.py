@@ -7,6 +7,8 @@ import numpy as np
 import cv2 as cv
 import gc
 
+from numpy.core.records import array
+
 # %%
 IMG_SIZE = (80,80)
 channels = 1
@@ -32,4 +34,11 @@ characters
 # Create training data
 train = caer.preprocess_from_dir(DIR=char_path, classes=characters, channels=channels, IMG_SIZE=IMG_SIZE, isShuffle=True, verbose=True)
 
+# %%
+len(train)
+# %%
+import matplotlib.pyplot as plt
+plt.figure(figsize=(30,30))
+plt.imshow(train[0][0], cmap='gray')
+plt.show()
 # %%
