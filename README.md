@@ -1,16 +1,17 @@
 # Installation
 
-pip install 
-opencv-contrib-python
+pip install matplotlib
 
-pip install caer
-
-pip install numpy scipy matplotlib ipython jupyter pandas sympy nose
- 
-*canaro installs tensorflow*
+*canaro installs tensorflow and other dependencies*
 
 pip install canaro
 
+pip install opencv-contrib-python
+pip install caer
+
+*scipy is not installed by any dependencies, but is used by tensorflow*
+
+pip install scipy
 ___
 
 # Download resources
