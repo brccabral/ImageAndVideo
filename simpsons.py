@@ -75,7 +75,10 @@ from tensorflow.keras.callbacks import LearningRateScheduler
 callbacks_list = [LearningRateScheduler(canaro.lr_schedule)]
 
 # %%
-import scipy
+# import scipy 
+# it is not installed as dependency, 
+# need to install it manually, 
+# but keras imports it automatically
 # %%
 training = model.fit(train_gen,
                     steps_per_epoch=len(x_train)//BATCH_SIZE,
