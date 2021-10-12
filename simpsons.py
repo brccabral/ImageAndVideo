@@ -88,3 +88,23 @@ training = model.fit(train_gen,
                     callbacks=callbacks_list)
 
 # %%
+test_path = r'Resources/kaggle_simpson_testset/bart_simpson_15.jpg'
+img = cv.imread(test_path)
+plt.imshow(img, cmap='gray')
+
+# %%
+def prepare(img):
+    img = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+    img = cv.resize(img, IMG_SIZE)
+    img = caer.reshape(img, IMG_SIZE, 1)
+    return img
+
+# %%
+predictions = model.predict(prepare(img))
+predictions
+
+# %%
+print(characters[np.argmax(predictions[0])])
+
+
+# %%
