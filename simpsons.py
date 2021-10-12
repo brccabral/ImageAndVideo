@@ -1,6 +1,5 @@
 # %%
 import os
-from pickle import TRUE
 import caer
 import canaro
 import numpy as np
