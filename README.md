@@ -1,24 +1,26 @@
-# Installation
+# OpenCV Course - Full Tutorial with Python
 
-pip install matplotlib
+https://www.youtube.com/watch?v=oXlwWbU8l2o
+___
 
-*canaro installs tensorflow and other dependencies*
+## Installation
 
-pip install canaro
+pip install matplotlib  
 
-pip install opencv-contrib-python
-pip install caer
+**canaro installs tensorflow and other dependencies**  
+pip install canaro  
+*pip install opencv-contrib-python*  
+*pip install caer*  
 
-*scipy is not installed by any dependencies, but is used by tensorflow*
-
+**scipy is not installed by any dependencies, but is used by tensorflow**  
 pip install scipy
 ___
 
-# Download resources
+## Download resources
 
-## Images
+### Images
 https://github.com/jasmcaus/opencv-course/tree/master/Resources
 
 
-## Simpsons
+### Simpsons
 https://www.kaggle.com/alexattia/the-simpsons-characters-dataset
