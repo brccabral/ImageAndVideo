@@ -5,15 +5,17 @@ ___
 
 ## Installation
 
-pip install matplotlib  
+    pip install matplotlib
 
 **canaro installs tensorflow and other dependencies**  
-pip install canaro  
-*pip install opencv-contrib-python*  
-*pip install caer*  
+
+    pip install canaro
+    #pip install opencv-contrib-python*  
+    #pip install caer*  
 
 **scipy is not installed by any dependencies, but is used by tensorflow**  
-pip install scipy
+
+    pip install scipy
 ___
 
 ## Download resources

@@ -10,15 +10,15 @@ import cv2 as cv
 
 # Reading Videos
 # capture = cv.VideoCapture(0) # 0 param is webcam id
-capture = cv.VideoCapture('Resources/Videos/dog.mp4')
+capture = cv.VideoCapture("Resources/Videos/dog.mp4")
 
 while True:
     isTrue, frame = capture.read()
     if not isTrue:
         break
-    cv.imshow('Video', frame)
+    cv.imshow("Video", frame)
 
-    if cv.waitKey(20) & 0xFF==ord('d'):
+    if cv.waitKey(20) & 0xFF == ord("d"):
         break
 
 capture.release()

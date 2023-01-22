@@ -2,7 +2,7 @@ import os
 import cv2 as cv
 import numpy as np
 
-DIR = r'./Resources/Faces/train'
+DIR = r"./Resources/Faces/train"
 
 people = []
 for i in os.listdir(DIR):
@@ -12,7 +12,10 @@ print(people)
 features = []
 labels = []
 
-haar_cascade: cv.CascadeClassifier = cv.CascadeClassifier('haarcascade_frontalface_default.xml')
+haar_cascade: cv.CascadeClassifier = cv.CascadeClassifier(
+    "haarcascade_frontalface_default.xml"
+)
+
 
 def create_train():
     for person in people:
@@ -25,30 +28,33 @@ def create_train():
             img_array = cv.imread(img_path)
 
             gray = cv.cvtColor(img_array, cv.COLOR_BGR2GRAY)
-            faces_rect = haar_cascade.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=4)
+            faces_rect = haar_cascade.detectMultiScale(
+                gray, scaleFactor=1.1, minNeighbors=4
+            )
 
-            for (x,y,w,h) in faces_rect:
-                faces_roi = gray[y:y+h, x:x+w]
+            for (x, y, w, h) in faces_rect:
+                faces_roi = gray[y : y + h, x : x + w]
                 features.append(faces_roi)
                 labels.append(label)
-                #cv.imshow(f'{person} {img}', faces_roi)
-        #break
+                # cv.imshow(f'{person} {img}', faces_roi)
+        # break
+
 
 create_train()
 
-print(f'Length features {len(features)}')
-print(f'Length labels {len(labels)}')
+print(f"Length features {len(features)}")
+print(f"Length labels {len(labels)}")
 
 features = np.array(features, dtype=object)
 labels = np.array(labels)
 
-np.save('features.npy', features)
-np.save('labels.npy', labels)
+np.save("features.npy", features)
+np.save("labels.npy", labels)
 
 face_recognizer = cv.face.LBPHFaceRecognizer_create()
 face_recognizer.train(features, labels)
-face_recognizer.save('face_trained.yml')
+face_recognizer.save("face_trained.yml")
 
-print('Training done ------------')
+print("Training done ------------")
 
 # cv.waitKey(0)
