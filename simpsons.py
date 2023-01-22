@@ -6,8 +6,8 @@ import numpy as np
 import cv2 as cv
 import gc
 import matplotlib.pyplot as plt
-from tensorflow.keras.utils import to_categorical
-from tensorflow.keras.callbacks import LearningRateScheduler
+from keras.utils import to_categorical
+from keras.callbacks import LearningRateScheduler
 
 # %%
 IMG_SIZE = (80, 80)
